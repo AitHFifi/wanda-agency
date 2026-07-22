@@ -8,10 +8,12 @@
       <div class="flex-shrink-0">
         <NuxtLink to="/" class="flex items-center gap-2 group" aria-label="Home">
           <div class="flex items-center text-primary group-hover:opacity-70 transition-opacity">
-            <!-- Custom SVG Symbol -->
-            <svg class="h-[36px] lg:h-[48px] w-auto fill-current" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-              <path d="M24 6L6 24L24 42L42 24L24 14ZM24 14L34 24L24 34L14 24L24 14Z" />
-            </svg>
+            <!-- W Logo Emblem -->
+            <img 
+              src="/logo-wanda-classic-light.svg" 
+              alt="Wanda Logo" 
+              class="h-[32px] lg:h-[40px] w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+            />
             <!-- Logo Text -->
             <span class="font-serif italic font-bold text-lg lg:text-xl ml-2 tracking-tight">Wanda.</span>
           </div>

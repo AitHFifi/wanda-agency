@@ -39,7 +39,7 @@
         <img 
           src="/logo-wanda-classic-light.svg" 
           alt="Wanda Logo" 
-          class="h-[280px] sm:h-[360px] md:h-[420px] lg:h-[500px] xl:h-[580px] w-auto object-contain opacity-100 pointer-events-auto filter drop-shadow-sm"
+          class="h-[280px] sm:h-[360px] md:h-[420px] lg:h-[500px] xl:h-[580px] w-auto object-contain opacity-100 pointer-events-auto"
           loading="eager"
           decoding="async"
         />

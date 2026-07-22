@@ -25,6 +25,7 @@
     ]
   },
   "devDependencies": {
+    "@react-email/render": "^2.1.0",
     "@tailwindcss/vite": "^4.3.0",
     "tailwindcss": "^4.3.0"
   }

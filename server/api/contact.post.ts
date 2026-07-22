@@ -1,5 +1,3 @@
-import { Resend } from 'resend'
-
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig()
   const body = await readBody(event)
@@ -20,26 +18,32 @@ export default defineEventHandler(async (event) => {
     return { success: true, mocked: true }
   }
 
-  const resend = new Resend(apiKey)
   const recipientEmail = config.contactToEmail || 'contact@example.com'
 
   try {
-    const data = await resend.emails.send({
-      from: 'onboarding@resend.dev',
-      to: [recipientEmail],
-      replyTo: email,
-      subject: `New Lead Inquiry from ${name}`,
-      html: `
-        <div style="font-family: sans-serif; padding: 20px;">
-          <h2>New Contact Form Submission</h2>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
-          <p><strong>Message:</strong></p>
-          <blockquote style="background: #f4f4f4; padding: 15px; border-left: 4px solid #000;">
-            ${message.replace(/\n/g, '<br>')}
-          </blockquote>
-        </div>
-      `
+    const data = await $fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json'
+      },
+      body: {
+        from: 'onboarding@resend.dev',
+        to: [recipientEmail],
+        reply_to: email,
+        subject: `New Lead Inquiry from ${name}`,
+        html: `
+          <div style="font-family: sans-serif; padding: 20px;">
+            <h2>New Contact Form Submission</h2>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+            <p><strong>Message:</strong></p>
+            <blockquote style="background: #f4f4f4; padding: 15px; border-left: 4px solid #000;">
+              ${message.replace(/\n/g, '<br>')}
+            </blockquote>
+          </div>
+        `
+      }
     })
 
     return { success: true, data }
@@ -47,7 +51,7 @@ export default defineEventHandler(async (event) => {
     console.error('[Resend Error]:', error)
     throw createError({
       statusCode: 500,
-      statusMessage: error.message || 'Failed to send email'
+      statusMessage: error?.data?.message || error?.message || 'Failed to send email'
     })
   }
 })

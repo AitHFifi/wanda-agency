@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     resendApiKey: process.env.RESEND_API_KEY || '',
     contactToEmail: process.env.CONTACT_TO_EMAIL || ''
   },
+
   vite: {
     plugins: [
       tailwindcss()

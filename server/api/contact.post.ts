@@ -28,7 +28,7 @@ export default defineEventHandler(async (event) => {
         'Content-Type': 'application/json'
       },
       body: {
-        from: 'onboarding@resend.dev',
+        from: 'Wanda Agency <contact@wanda-agency.studio>',
         to: [recipientEmail],
         reply_to: email,
         subject: `New Lead Inquiry from ${name}`,

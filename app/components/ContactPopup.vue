@@ -1,12 +1,12 @@
 <template>
   <Transition name="fade">
-    <div v-if="isOpen" class="fixed inset-0 w-full h-screen bg-primary/20 backdrop-blur-sm z-[1000] flex justify-end" @click.self="$emit('close')">
+    <div v-if="isOpen" class="fixed inset-0 w-full h-screen bg-primary/20 backdrop-blur-sm z-[1000] flex justify-end" @click.self="$emit('close')" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <!-- Drawer Panel -->
       <div class="w-full max-w-lg h-full bg-bg shadow-2xl flex flex-col justify-between p-8 md:p-12 relative z-10 transition-transform duration-500 transform overflow-y-auto">
         
         <!-- Header -->
         <div class="flex justify-between items-center pb-6 border-b border-primary/10">
-          <h3 class="font-serif italic text-3xl font-light text-primary">{{ t('contactPopup.title') }}</h3>
+          <h3 id="modal-title" class="font-serif italic text-3xl font-light text-primary">{{ t('contactPopup.title') }}</h3>
           <button @click="$emit('close')" class="p-2 border border-primary/10 rounded-full hover:bg-primary/5 transition-colors focus:outline-none cursor-pointer">
             <!-- Close icon -->
             <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">

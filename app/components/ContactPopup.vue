@@ -73,16 +73,50 @@
           </div>
         </form>
 
-        <!-- Status Notifications -->
-        <div v-if="status" class="p-4 rounded-lg text-sm text-center font-medium transition-all" :class="status.success ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'">
-          {{ status.message }}
-        </div>
-
         <!-- Footer -->
         <div class="pt-6 border-t border-primary/10 flex justify-between text-xs text-muted">
           <span>{{ t('contactPopup.footerLocation') }}</span>
           <span>{{ t('contactPopup.footerReplyTime') }}</span>
         </div>
+
+      </div>
+    </div>
+  </Transition>
+
+  <!-- Centered Confirmation Popup Modal -->
+  <Transition name="pop">
+    <div v-if="status" class="fixed inset-0 w-full h-screen bg-black/60 backdrop-blur-md z-[1200] flex items-center justify-center p-4" @click.self="dismissStatus">
+      <div class="bg-bg border border-primary/10 shadow-2xl rounded-3xl p-8 max-w-sm w-full text-center flex flex-col items-center gap-5 relative animate-pop">
+        
+        <!-- Status Icon -->
+        <div v-if="status.success" class="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center border border-emerald-500/20">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+          </svg>
+        </div>
+        <div v-else class="w-16 h-16 rounded-full bg-rose-500/10 text-rose-600 flex items-center justify-center border border-rose-500/20">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+          </svg>
+        </div>
+
+        <!-- Title & Text -->
+        <div class="flex flex-col gap-2">
+          <h4 class="font-serif italic text-2xl font-semibold text-primary">
+            {{ status.success ? t('contactPopup.successTitle') || 'Demande envoyée !' : 'Oups !' }}
+          </h4>
+          <p class="text-sm text-secondary leading-relaxed">
+            {{ status.message }}
+          </p>
+        </div>
+
+        <!-- Dismiss Button -->
+        <button 
+          @click="dismissStatus"
+          class="w-full mt-2 py-3 px-6 rounded-full bg-primary text-bg font-medium text-sm hover:opacity-90 active:scale-95 transition-all cursor-pointer shadow-md"
+        >
+          {{ status.success ? 'D\'accord' : 'Fermer' }}
+        </button>
 
       </div>
     </div>
@@ -112,6 +146,16 @@ const form = ref({
 
 const loading = ref(false)
 const status = ref(null)
+let autoCloseTimer = null
+
+const dismissStatus = () => {
+  if (autoCloseTimer) clearTimeout(autoCloseTimer)
+  const isSuccess = status.value?.success
+  status.value = null
+  if (isSuccess) {
+    emit('close')
+  }
+}
 
 const submitForm = async () => {
   loading.value = true
@@ -133,10 +177,10 @@ const submitForm = async () => {
     }
     
     form.value = { name: '', email: '', message: '' }
-    setTimeout(() => {
-      emit('close')
-      status.value = null
-    }, 2500)
+    
+    autoCloseTimer = setTimeout(() => {
+      dismissStatus()
+    }, 4000)
     
   } catch (err) {
     console.warn('Contact submission error:', err?.message || err)
@@ -174,5 +218,17 @@ const submitForm = async () => {
 
 .fade-leave-to > div {
   transform: translate3d(100%, 0, 0);
+}
+
+/* Centered Pop Transition */
+.pop-enter-active,
+.pop-leave-active {
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.pop-enter-from,
+.pop-leave-to {
+  opacity: 0;
+  transform: scale(0.88) translateY(12px);
 }
 </style>

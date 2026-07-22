@@ -30,7 +30,7 @@ Create `app/pages/index.vue`:
 
 <script setup>
 useHead({
-  title: 'Wanda Agency — Digital Agency in Libreville, Gabon',
+  title: 'Wanda Agency — Digital Agency',
   meta: [
     { name: 'description', content: 'Wanda Agency designs and builds modern web apps, custom CRMs, business tools, and SaaS web marketplaces in Libreville, Gabon.' }
   ]

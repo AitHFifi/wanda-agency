@@ -60,8 +60,8 @@
         <!-- Contact details column (Bottom & Centered on Mobile) -->
         <div class="flex flex-col items-center md:items-start text-center md:text-left gap-3 w-full border-t border-primary/10 pt-8 md:border-none md:pt-0">
           <h4 class="text-xs uppercase font-bold text-muted tracking-widest mb-1">{{ t('footer.getInTouch') }}</h4>
-          <a href="mailto:hello@wanda.agency" class="text-base font-medium hover:opacity-70 transition-opacity break-all">
-            hello@wanda.agency
+          <a href="mailto:contact@wanda-agency.studio" class="text-base font-medium hover:opacity-70 transition-opacity break-all">
+            contact@wanda-agency.studio
           </a>
           <div class="flex flex-col items-center md:items-start gap-0.5 mt-1">
             <span class="text-xs font-bold text-muted uppercase tracking-wider">{{ t('footer.locationLabel') }}</span>

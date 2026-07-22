@@ -36,8 +36,8 @@
         <!-- Contact details column -->
         <div class="flex flex-col gap-3">
           <h4 class="text-xs uppercase font-bold text-muted tracking-widest mb-1">Get in touch</h4>
-          <a href="mailto:hello@wanda.agency" class="text-base hover:opacity-70 transition-opacity break-all">
-            hello@wanda.agency
+          <a href="mailto:contact@wanda-agency.studio" class="text-base hover:opacity-70 transition-opacity break-all">
+            contact@wanda-agency.studio
           </a>
           <div class="flex flex-col gap-0.5 mt-2">
             <span class="text-xs font-bold text-muted uppercase tracking-wider">Phone</span>

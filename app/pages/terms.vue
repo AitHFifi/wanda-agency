@@ -104,7 +104,7 @@
           </p>
           <div class="p-6 rounded-2xl bg-primary/5 border border-primary/10">
             <div class="font-serif text-lg font-bold text-primary">{{ t('termsPage.sections.questionsTitle') }}</div>
-            <div class="text-sm text-secondary mt-1">{{ t('termsPage.sections.reachOut') }} <a href="mailto:hello@wanda.agency" class="text-primary hover:underline">hello@wanda.agency</a></div>
+            <div class="text-sm text-secondary mt-1">{{ t('termsPage.sections.reachOut') }} <a href="mailto:contact@wanda-agency.studio" class="text-primary hover:underline">contact@wanda-agency.studio</a></div>
           </div>
         </section>
 

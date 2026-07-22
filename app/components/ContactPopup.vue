@@ -18,7 +18,7 @@
         <!-- Form Content -->
         <form @submit.prevent="submitForm" class="flex-grow flex flex-col gap-6 py-8">
           <p class="text-sm text-secondary font-medium">
-            {{ t('contactPopup.subtitle') }} <a href="mailto:hello@wanda.agency" class="underline font-bold text-primary">hello@wanda.agency</a>.
+            {{ t('contactPopup.subtitle') }} <a href="mailto:contact@wanda-agency.studio" class="underline font-bold text-primary">contact@wanda-agency.studio</a>.
           </p>
           
           <!-- Name Input -->

@@ -101,9 +101,9 @@
             <div>
               <div class="font-serif text-lg font-bold text-primary">{{ t('privacyPage.sections.teamTitle') }}</div>
               <div class="text-sm text-secondary">{{ t('privacyPage.sections.teamLocation') }}</div>
-              <div class="text-sm text-secondary mt-1">Email: <a href="mailto:hello@wanda.agency" class="text-primary hover:underline">hello@wanda.agency</a></div>
+              <div class="text-sm text-secondary mt-1">Email: <a href="mailto:contact@wanda-agency.studio" class="text-primary hover:underline">contact@wanda-agency.studio</a></div>
             </div>
-            <a href="mailto:hello@wanda.agency" class="px-6 py-3 rounded-full bg-primary text-bg font-medium text-sm hover:opacity-90 transition-opacity">
+            <a href="mailto:contact@wanda-agency.studio" class="px-6 py-3 rounded-full bg-primary text-bg font-medium text-sm hover:opacity-90 transition-opacity">
               {{ t('privacyPage.sections.contactButton') }}
             </a>
           </div>

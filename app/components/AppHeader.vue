@@ -1,5 +1,8 @@
+<!--
+  AppHeader Component: Glassmorphic navigation bar with responsive drawer and i18n switcher.
+-->
 <template>
-  <header class="w-full h-[100px] absolute top-0 left-0 z-50 text-primary transition-all duration-300">
+  <header class="w-full h-[100px] absolute top-0 left-0 z-50 text-primary transition-all duration-300 backdrop-blur-sm bg-background/20">
     <nav class="flex max-w-7xl mx-auto justify-between items-center px-6 md:px-12 pt-6 pb-2">
       <!-- Logo -->
       <div class="flex-shrink-0">

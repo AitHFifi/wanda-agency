@@ -38,8 +38,8 @@
       >
         <img 
           ref="imageRef"
-          src="/hero_portrait.png" 
-          alt="Wanda Creative Portfolio" 
+          src="/logo-wanda-classic-light.svg" 
+          alt="Wanda Logo" 
           class="h-[85%] lg:h-[95%] xl:h-full object-contain pointer-events-auto"
           loading="eager"
           decoding="async"

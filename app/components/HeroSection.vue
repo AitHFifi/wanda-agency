@@ -37,9 +37,9 @@
         :style="{ transform: `translate3d(${offsetX}px, ${offsetY}px, 0)` }"
       >
         <img 
-          src="/hero_portrait.webp" 
-          alt="Wanda Creative Agency" 
-          class="h-[320px] sm:h-[400px] md:h-[460px] lg:h-[550px] xl:h-[645px] object-contain opacity-100 pointer-events-auto"
+          src="/logo-wanda-classic-light.svg" 
+          alt="Wanda Logo" 
+          class="h-[280px] sm:h-[360px] md:h-[420px] lg:h-[500px] xl:h-[580px] w-auto object-contain opacity-100 pointer-events-auto"
           loading="eager"
           decoding="async"
         />

@@ -16,56 +16,74 @@
         </div>
 
         <!-- Form Content -->
-        <form @submit.prevent="submitForm" class="flex-grow flex flex-col gap-6 py-8">
+        <form @submit.prevent="submitForm" class="flex-grow flex flex-col gap-6 py-8" novalidate>
           <p class="text-sm text-secondary font-medium">
             {{ t('contactPopup.subtitle') }} <a href="mailto:contact@wanda-agency.studio" class="underline font-bold text-primary">contact@wanda-agency.studio</a>.
           </p>
           
           <!-- Name Input -->
-          <div class="flex flex-col gap-2">
+          <div class="flex flex-col gap-1.5">
             <label for="name" class="text-xs uppercase font-bold text-muted tracking-wider">{{ t('contactPopup.labels.name') }}</label>
             <input 
               v-model="form.name" 
+              @blur="touched.name = true"
+              @input="validateField('name')"
               type="text" 
               id="name" 
               required 
               :placeholder="t('contactPopup.placeholders.name')"
-              class="w-full px-4 py-3 border border-primary/15 rounded-lg bg-white/50 focus:outline-none focus:border-primary transition-colors text-base"
+              class="w-full px-4 py-3 border rounded-lg bg-white/50 focus:outline-none transition-colors text-base"
+              :class="errors.name && touched.name ? 'border-rose-400 focus:border-rose-500 bg-rose-500/5' : 'border-primary/15 focus:border-primary'"
             />
+            <span v-if="errors.name && touched.name" class="text-xs text-rose-500 font-medium animate-fadeIn">
+              {{ errors.name }}
+            </span>
           </div>
 
           <!-- Email Input -->
-          <div class="flex flex-col gap-2">
+          <div class="flex flex-col gap-1.5">
             <label for="email" class="text-xs uppercase font-bold text-muted tracking-wider">{{ t('contactPopup.labels.email') }}</label>
             <input 
               v-model="form.email" 
+              @blur="touched.email = true"
+              @input="validateField('email')"
               type="email" 
               id="email" 
               required 
               :placeholder="t('contactPopup.placeholders.email')"
-              class="w-full px-4 py-3 border border-primary/15 rounded-lg bg-white/50 focus:outline-none focus:border-primary transition-colors text-base"
+              class="w-full px-4 py-3 border rounded-lg bg-white/50 focus:outline-none transition-colors text-base"
+              :class="errors.email && touched.email ? 'border-rose-400 focus:border-rose-500 bg-rose-500/5' : 'border-primary/15 focus:border-primary'"
             />
+            <span v-if="errors.email && touched.email" class="text-xs text-rose-500 font-medium animate-fadeIn">
+              {{ errors.email }}
+            </span>
           </div>
 
           <!-- Message Input -->
-          <div class="flex flex-col gap-2">
+          <div class="flex flex-col gap-1.5">
             <label for="message" class="text-xs uppercase font-bold text-muted tracking-wider">{{ t('contactPopup.labels.message') }}</label>
             <textarea 
               v-model="form.message" 
+              @blur="touched.message = true"
+              @input="validateField('message')"
               id="message" 
-              rows="5" 
+              rows="4" 
               required 
               :placeholder="t('contactPopup.placeholders.message')"
-              class="w-full px-4 py-3 border border-primary/15 rounded-lg bg-white/50 focus:outline-none focus:border-primary transition-colors text-base resize-none"
+              class="w-full px-4 py-3 border rounded-lg bg-white/50 focus:outline-none transition-colors text-base resize-none"
+              :class="errors.message && touched.message ? 'border-rose-400 focus:border-rose-500 bg-rose-500/5' : 'border-primary/15 focus:border-primary'"
             ></textarea>
+            <span v-if="errors.message && touched.message" class="text-xs text-rose-500 font-medium animate-fadeIn">
+              {{ errors.message }}
+            </span>
           </div>
 
           <!-- Submit Button -->
-          <div class="mt-4">
+          <div class="mt-2">
             <button 
               type="submit" 
-              :disabled="loading"
-              class="w-full bg-primary text-bg py-4 px-8 rounded-full font-sans font-medium text-base hover:opacity-90 active:scale-[0.99] disabled:opacity-50 transition-all cursor-pointer flex justify-center items-center gap-2"
+              :disabled="loading || isFormInvalid"
+              class="w-full bg-primary text-bg py-4 px-8 rounded-full font-sans font-medium text-base hover:opacity-90 active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed transition-all cursor-pointer flex justify-center items-center gap-2 shadow-md"
             >
               <span v-if="loading" class="animate-spin rounded-full h-5 w-5 border-2 border-bg border-t-transparent"></span>
               <span>{{ loading ? t('contactPopup.submitting') : t('contactPopup.submit') }}</span>
@@ -89,12 +107,12 @@
       <div class="bg-bg border border-primary/10 shadow-2xl rounded-3xl p-8 max-w-sm w-full text-center flex flex-col items-center gap-5 relative animate-pop">
         
         <!-- Status Icon -->
-        <div v-if="status.success" class="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center border border-emerald-500/20">
+        <div v-if="status.success" class="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center border border-emerald-500/20 shadow-inner">
           <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
           </svg>
         </div>
-        <div v-else class="w-16 h-16 rounded-full bg-rose-500/10 text-rose-600 flex items-center justify-center border border-rose-500/20">
+        <div v-else class="w-16 h-16 rounded-full bg-rose-500/10 text-rose-600 flex items-center justify-center border border-rose-500/20 shadow-inner">
           <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
           </svg>
@@ -103,7 +121,7 @@
         <!-- Title & Text -->
         <div class="flex flex-col gap-2">
           <h4 class="font-serif italic text-2xl font-semibold text-primary">
-            {{ status.success ? t('contactPopup.successTitle') || 'Demande envoyée !' : 'Oups !' }}
+            {{ status.success ? (t('contactPopup.successTitle') || 'Message Envoyé !') : (t('contactPopup.errorTitle') || 'Oups !') }}
           </h4>
           <p class="text-sm text-secondary leading-relaxed">
             {{ status.message }}
@@ -124,7 +142,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { useLanguage } from '~/composables/useLanguage'
 
 const { t } = useLanguage()
@@ -144,9 +162,66 @@ const form = ref({
   message: ''
 })
 
+const touched = ref({
+  name: false,
+  email: false,
+  message: false
+})
+
+const errors = ref({
+  name: '',
+  email: '',
+  message: ''
+})
+
 const loading = ref(false)
 const status = ref(null)
 let autoCloseTimer = null
+
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+const validateField = (field) => {
+  if (field === 'name') {
+    if (!form.value.name.trim() || form.value.name.trim().length < 2) {
+      errors.value.name = t('contactPopup.validation.nameMin') || 'Name must be at least 2 characters.'
+    } else {
+      errors.value.name = ''
+    }
+  }
+
+  if (field === 'email') {
+    if (!form.value.email.trim() || !emailRegex.test(form.value.email.trim())) {
+      errors.value.email = t('contactPopup.validation.emailInvalid') || 'Please enter a valid email address.'
+    } else {
+      errors.value.email = ''
+    }
+  }
+
+  if (field === 'message') {
+    if (!form.value.message.trim() || form.value.message.trim().length < 10) {
+      errors.value.message = t('contactPopup.validation.messageMin') || 'Message must be at least 10 characters.'
+    } else {
+      errors.value.message = ''
+    }
+  }
+}
+
+const validateAll = () => {
+  validateField('name')
+  validateField('email')
+  validateField('message')
+  touched.value = { name: true, email: true, message: true }
+  return !errors.value.name && !errors.value.email && !errors.value.message
+}
+
+const isFormInvalid = computed(() => {
+  return !form.value.name.trim() || 
+         form.value.name.trim().length < 2 ||
+         !form.value.email.trim() || 
+         !emailRegex.test(form.value.email.trim()) ||
+         !form.value.message.trim() || 
+         form.value.message.trim().length < 10
+})
 
 const dismissStatus = () => {
   if (autoCloseTimer) clearTimeout(autoCloseTimer)
@@ -158,6 +233,8 @@ const dismissStatus = () => {
 }
 
 const submitForm = async () => {
+  if (!validateAll()) return
+
   loading.value = true
   status.value = null
 
@@ -165,9 +242,9 @@ const submitForm = async () => {
     await $fetch('/api/contact', {
       method: 'POST',
       body: {
-        name: form.value.name,
-        email: form.value.email,
-        message: form.value.message
+        name: form.value.name.trim(),
+        email: form.value.email.trim(),
+        message: form.value.message.trim()
       }
     })
 
@@ -177,6 +254,8 @@ const submitForm = async () => {
     }
     
     form.value = { name: '', email: '', message: '' }
+    touched.value = { name: false, email: false, message: false }
+    errors.value = { name: '', email: '', message: '' }
     
     autoCloseTimer = setTimeout(() => {
       dismissStatus()
@@ -230,5 +309,14 @@ const submitForm = async () => {
 .pop-leave-to {
   opacity: 0;
   transform: scale(0.88) translateY(12px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out forwards;
 }
 </style>

@@ -64,8 +64,15 @@ export default {
     },
     submit: 'Send Inquiry',
     submitting: 'Sending...',
+    successTitle: 'Message Sent!',
+    errorTitle: 'Oops!',
     success: 'Thank you! Your message has been sent successfully.',
     mockSuccess: 'Inquiry simulated successfully! (Database table setup pending)',
+    validation: {
+      nameMin: 'Name must be at least 2 characters.',
+      emailInvalid: 'Please enter a valid email address.',
+      messageMin: 'Message must be at least 10 characters.'
+    },
     footerLocation: 'Libreville, Gabon',
     footerReplyTime: 'Usually replies in 24h'
   },

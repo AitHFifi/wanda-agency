@@ -4,10 +4,30 @@ export default defineEventHandler(async (event) => {
 
   const { name, email, message } = body || {}
 
-  if (!name || !email || !message) {
+  const cleanName = typeof name === 'string' ? name.trim() : ''
+  const cleanEmail = typeof email === 'string' ? email.trim() : ''
+  const cleanMessage = typeof message === 'string' ? message.trim() : ''
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+  if (!cleanName || cleanName.length < 2) {
     throw createError({
       statusCode: 400,
-      statusMessage: 'Missing required fields: name, email, and message are required.'
+      statusMessage: 'Le nom doit contenir au moins 2 caractères.'
+    })
+  }
+
+  if (!cleanEmail || !emailRegex.test(cleanEmail)) {
+    throw createError({
+      statusCode: 400,
+      statusMessage: 'Veuillez saisir une adresse email valide.'
+    })
+  }
+
+  if (!cleanMessage || cleanMessage.length < 10) {
+    throw createError({
+      statusCode: 400,
+      statusMessage: 'Le message doit contenir au moins 10 caractères.'
     })
   }
 

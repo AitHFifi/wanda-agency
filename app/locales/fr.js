@@ -64,8 +64,15 @@ export default {
     },
     submit: 'Envoyer la demande',
     submitting: 'Envoi en cours...',
+    successTitle: 'Message Envoyé !',
+    errorTitle: 'Oups !',
     success: 'Merci ! Votre message a été envoyé avec succès.',
     mockSuccess: 'Demande simulée avec succès ! (Configuration de base de données en attente)',
+    validation: {
+      nameMin: 'Le nom doit contenir au moins 2 caractères.',
+      emailInvalid: 'Veuillez saisir une adresse email valide.',
+      messageMin: 'Le message doit contenir au moins 10 caractères.'
+    },
     footerLocation: 'Libreville, Gabon',
     footerReplyTime: 'Réponse habituelle sous 24h'
   },

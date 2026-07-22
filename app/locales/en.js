@@ -1,0 +1,181 @@
+export default {
+  header: {
+    about: 'About',
+    work: 'Work',
+    contact: 'Contact',
+    menu: 'Menu',
+    close: 'Close',
+    connect: 'Connect'
+  },
+  hero: {
+    marqueeWords: ['Crafting', 'web', 'apps', 'and', 'experiences', 'that', 'differ'],
+    servicesLabel: 'Services',
+    service1: 'Websites & Digital Presence',
+    service2: 'Custom CRM & Business Tools',
+    service3: 'SaaS & Web Marketplaces',
+    locationLabel: 'Location',
+    locatedIn: 'Located in :',
+    locationValue: 'Libreville, Gabon',
+    startProject: 'Start a project'
+  },
+  aboutSection: {
+    headingText: 'We design and build modern digital experiences — engineering custom websites, business CRMs, and SaaS web marketplaces that help brands rise above the noise. Focused, intentional, and based in Libreville, Gabon.',
+    description: 'Our passion for design, modern web architecture, and interactive engineering shapes a distinctive approach to digital products. Building high-impact solutions for businesses in Libreville, Gabon and worldwide.',
+    buttonText: 'About us'
+  },
+  workSection: {
+    title: 'Selected work',
+    viewAll: 'View all',
+    tableHeaders: {
+      client: 'Client',
+      category: 'Category',
+      services: 'Services',
+      year: 'Year'
+    },
+    categories: {
+      digitalMarketplace: 'Digital Marketplace',
+      logisticsECommerce: 'Logistics & E-Commerce',
+      fintechPlatform: 'Fintech Platform'
+    }
+  },
+  footer: {
+    tagline: 'Elevating digital design & custom development to the next level.',
+    menu: 'Menu',
+    social: 'Social',
+    getInTouch: 'Get in touch',
+    locationLabel: 'Location',
+    locationValue: 'Libreville, Gabon',
+    copyright: 'Wanda Agency. All rights reserved.',
+    privacy: 'Privacy Policy',
+    terms: 'Terms of Service'
+  },
+  contactPopup: {
+    title: "Let's connect",
+    subtitle: "Fill in the details below, or send me a direct email at",
+    labels: {
+      name: 'Your Name',
+      email: 'Email Address',
+      message: 'Project Description'
+    },
+    placeholders: {
+      name: 'John Doe',
+      email: 'john@example.com',
+      message: 'Tell me about your project, goals, and timeline...'
+    },
+    submit: 'Send Inquiry',
+    submitting: 'Sending...',
+    success: 'Thank you! Your message has been sent successfully.',
+    mockSuccess: 'Inquiry simulated successfully! (Database table setup pending)',
+    footerLocation: 'Libreville, Gabon',
+    footerReplyTime: 'Usually replies in 24h'
+  },
+  aboutPage: {
+    tag: 'About Wanda Agency',
+    heading: 'We design & build digital experiences that push standards forward.',
+    p1: 'Based in Libreville, Gabon, Wanda Agency is a modern digital agency specializing in custom web platforms, business CRMs, and SaaS web marketplaces.',
+    p2: 'We combine high-end minimalist visual aesthetics with powerful engineering to help brands stand out and scale efficiently across Africa and internationally.',
+    quickInfoTitle: 'Agency Quick Info',
+    location: 'Location',
+    locationVal: 'Libreville, Gabon',
+    services: 'Core Services',
+    servicesVal: 'Websites, Custom CRMs, SaaS Marketplaces',
+    reach: 'Reach',
+    reachVal: 'Gabon & International',
+    whatWeDo: 'What We Do',
+    service1Title: 'Websites & Digital Presence',
+    service1Desc: 'High-converting landing pages, corporate websites, and brand platforms built with cutting-edge design systems.',
+    service2Title: 'Custom CRM & Business Tools',
+    service2Desc: 'Tailor-made dashboards, management software, and workflow automation engines built for operational efficiency.',
+    service3Title: 'SaaS & Web Marketplaces',
+    service3Desc: 'Scalable multi-tenant web applications, subscription platforms, and digital marketplaces.'
+  },
+  workPage: {
+    tag: 'Portfolio',
+    heading: 'Selected Projects & Products'
+  },
+  privacyPage: {
+    tag: 'Legal & Privacy',
+    title: 'Privacy Policy',
+    subtitle: 'Transparency, security, and data protection are fundamental to how Wanda Agency operates. Here is how we collect, handle, and safeguard your information.',
+    effectiveDate: 'Effective Date: July 21, 2026',
+    onThisPage: 'On This Page',
+    sections: {
+      s1Title: '1. Overview',
+      s1Text: 'Wanda Agency ("we", "our", or "us"), based in Libreville, Gabon, provides digital design, branding, and custom software development services. This Privacy Policy explains our commitment to protecting your personal data when you visit our website or communicate with our team.',
+      s2Title: '2. Information We Collect',
+      s2Intro: 'We collect information that you directly provide to us, as well as technical data automatically generated during your site visit:',
+      s2Item1Label: 'Inquiry & Contact Information:',
+      s2Item1Text: 'Name, business email, company name, project details, budget range, and messages sent via our contact forms.',
+      s2Item2Label: 'Technical & Usage Data:',
+      s2Item2Text: 'IP address, browser type, operating system, pages visited, duration of visit, and referrer URLs collected automatically via standard server logs and analytical metrics.',
+      s3Title: '3. How We Use Your Data',
+      s3Intro: 'We strictly process your personal data for legitimate business purposes:',
+      s3Item1: 'Responding to client inquiries and preparing custom project proposals.',
+      s3Item2: 'Executing, delivering, and supporting contracted digital design & custom development services.',
+      s3Item3: 'Improving our website performance, user experience, and service offerings.',
+      s3Item4: 'Fulfilling legal, tax, and accounting compliance obligations under Gabonese and international law.',
+      s4Title: '4. Storage & Security',
+      s4Text: 'We implement technical and organizational security measures to protect your data against unauthorized access, alteration, disclosure, or destruction. Contact form submissions and inquiries are processed securely using encrypted database connections (including Supabase database infrastructure).',
+      s5Title: '5. Cookies & Tracking Technologies',
+      s5Text: 'Our website uses minimal, essential cookies and local browser storage to maintain session state and optimize smooth page transitions. We do not use intrusive third-party cross-site tracking or sell user data to advertising networks.',
+      s6Title: '6. Third-Party Sharing',
+      s6Text: 'We do not sell, rent, or trade your personal information. We may share data only with trusted infrastructure providers (such as hosting platforms and database providers) under strict data protection agreements, or when required by law or legal proceedings.',
+      s7Title: '7. Your Rights',
+      s7Intro: 'Regardless of your location, you hold rights regarding your personal information:',
+      s7Item1: 'Right to request access to the personal data we hold about you.',
+      s7Item2: 'Right to request correction of inaccurate or incomplete data.',
+      s7Item3: 'Right to request erasure ("right to be forgotten") of your personal data.',
+      s7Item4: 'Right to object to or restrict processing of your information.',
+      s8Title: '8. Contact Us',
+      s8Text: 'If you have any questions, concerns, or requests regarding this Privacy Policy or your data, please contact our privacy representative:',
+      teamTitle: 'Wanda Agency Data Team',
+      teamLocation: 'Libreville, Gabon',
+      contactButton: 'Contact Data Team',
+      termsPrompt: 'Looking for terms & conditions?',
+      termsLink: 'Read Terms of Service'
+    }
+  },
+  termsPage: {
+    tag: 'Legal Terms',
+    title: 'Terms of Service',
+    subtitle: 'These terms govern your access to Wanda Agency’s website and define the contractual standards for our digital design and custom software engagements.',
+    effectiveDate: 'Effective Date: July 21, 2026',
+    onThisPage: 'On This Page',
+    sections: {
+      s1Title: '1. Acceptance of Terms',
+      s1Text: 'By accessing or using the website operated by Wanda Agency ("Agency", "we", "us"), or by engaging us for digital design, brand identity, or software development services, you agree to be bound by these Terms of Service. If you do not agree, please refrain from using our services.',
+      s2Title: '2. Scope of Digital Services',
+      s2Intro: 'Wanda Agency offers professional design and custom technology services, including:',
+      s2Item1: 'User experience (UX) & user interface (UI) design.',
+      s2Item2: 'Custom web application design and engineering (e.g. Nuxt, Vue, React, Tailwind).',
+      s2Item3: 'Brand identity, motion graphics, and digital design systems.',
+      s2Outro: 'Specific deliverables, timelines, milestones, and project fees for individual engagements are detailed in a separate Statement of Work (SOW) or formal client agreement.',
+      s3Title: '3. Intellectual Property Rights',
+      s3Item1Label: 'Client Ownership:',
+      s3Item1Text: 'Upon full receipt of agreed project payments, all final custom design assets, code deliverables, and branding produced specifically for the Client under an active SOW transfer to Client ownership.',
+      s3Item2Label: 'Agency Portfolio Rights:',
+      s3Item2Text: 'Wanda Agency retains the right to display non-confidential project deliverables, designs, and screenshots in our online portfolio, case studies, and social media showcase unless explicitly agreed otherwise in a signed NDA.',
+      s3Item3Label: 'Pre-existing Assets:',
+      s3Item3Text: 'Pre-existing frameworks, open-source libraries, and internal agency starter templates remain the intellectual property of their respective owners or Wanda Agency.',
+      s4Title: '4. Client Responsibilities',
+      s4Intro: 'Clients engaging Wanda Agency agree to:',
+      s4Item1: 'Provide timely feedback, required project content, brand assets, and necessary access credentials.',
+      s4Item2: 'Ensure all client-provided materials (logos, copy, images) do not infringe third-party copyrights or intellectual property rights.',
+      s4Item3: 'Adhere to agreed milestone feedback windows to avoid project schedule delays.',
+      s5Title: '5. Payment & Invoicing',
+      s5Text1: 'Services are billed according to project milestones outlined in the relevant statement of work. Deposits are required before project kickoff. Invoices are payable within 14 calendar days of issuance unless specified otherwise.',
+      s5Text2: 'Late payments may incur interest charges of 1.5% per month or the legal maximum permitted by law, and work on active milestones may be paused until outstanding accounts are settled.',
+      s6Title: '6. Warranties & Limitation of Liability',
+      s6Text1: 'We deliver services with high standards of professional craft and diligence. However, this website and informational materials are provided "as is".',
+      s6Text2: 'To the maximum extent permitted by applicable law, Wanda Agency shall not be liable for any indirect, incidental, special, or consequential damages resulting from site usage or service interruptions. Total cumulative liability under any claim shall not exceed the total fees paid by Client to Agency in the preceding 6 months.',
+      s7Title: '7. Termination',
+      s7Text: 'Either party may terminate an active project engagement with 14 days written notice if the other party materially breaches these terms or an active SOW. Upon termination, Client shall pay for all work completed up to the effective termination date.',
+      s8Title: '8. Governing Law & Jurisdiction',
+      s8Text: 'These Terms of Service are governed by and construed in accordance with the laws of Gabon. Any dispute arising under or in connection with these terms shall be submitted to the exclusive jurisdiction of the competent courts of Libreville, Gabon, or settled via mutual commercial arbitration.',
+      questionsTitle: 'Questions regarding our terms?',
+      reachOut: 'Reach out to our team at',
+      privacyPrompt: 'Looking for our data policy?',
+      privacyLink: 'Read Privacy Policy'
+    }
+  }
+}

@@ -11,14 +11,16 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  const apiKey = config.resendApiKey
+  const apiKey = config.resendApiKey || process.env.RESEND_API_KEY
+  const recipientEmail = config.contactToEmail || process.env.CONTACT_TO_EMAIL || 'alloghofrederic9@gmail.com'
+
+  console.log('[Contact API] Processing submission from:', name, email)
+  console.log('[Contact API] Destination email:', recipientEmail)
+
   if (!apiKey || apiKey.startsWith('re_placeholder')) {
-    // Graceful fallback for local development without active API key
-    console.warn('[Resend API] No active RESEND_API_KEY configured. Mocking success.')
+    console.warn('[Resend API] No active RESEND_API_KEY found in environment variables. Mocking success.')
     return { success: true, mocked: true }
   }
-
-  const recipientEmail = config.contactToEmail || 'contact@example.com'
 
   try {
     const data = await $fetch('https://api.resend.com/emails', {
@@ -46,9 +48,10 @@ export default defineEventHandler(async (event) => {
       }
     })
 
+    console.log('[Resend API] Success! Email ID:', (data as any)?.id)
     return { success: true, data }
   } catch (error: any) {
-    console.error('[Resend Error]:', error)
+    console.error('[Resend Error]:', error?.data || error)
     throw createError({
       statusCode: 500,
       statusMessage: error?.data?.message || error?.message || 'Failed to send email'

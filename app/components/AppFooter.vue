@@ -1,3 +1,6 @@
+<!--
+  AppFooter Component: Global footer with social links, localized copyright, and newsletter integration.
+-->
 <template>
   <footer class="w-full bg-bg text-primary pt-16 md:pt-20 pb-8 px-6 md:px-12 border-t border-primary/10 relative z-20">
     <div class="max-w-7xl mx-auto flex flex-col gap-12 md:gap-24">

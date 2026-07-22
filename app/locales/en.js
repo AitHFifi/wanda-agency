@@ -115,7 +115,7 @@ export default {
       s3Item3: 'Improving our website performance, user experience, and service offerings.',
       s3Item4: 'Fulfilling legal, tax, and accounting compliance obligations under Gabonese and international law.',
       s4Title: '4. Storage & Security',
-      s4Text: 'We implement technical and organizational security measures to protect your data against unauthorized access, alteration, disclosure, or destruction. Contact form submissions and inquiries are processed securely using encrypted database connections (including Supabase database infrastructure).',
+      s4Text: 'We implement technical and organizational security measures to protect your data against unauthorized access, alteration, disclosure, or destruction. Contact form submissions and inquiries are processed securely using encrypted cloud email infrastructure.',
       s5Title: '5. Cookies & Tracking Technologies',
       s5Text: 'Our website uses minimal, essential cookies and local browser storage to maintain session state and optimize smooth page transitions. We do not use intrusive third-party cross-site tracking or sell user data to advertising networks.',
       s6Title: '6. Third-Party Sharing',

@@ -118,15 +118,14 @@ const submitForm = async () => {
   status.value = null
 
   try {
-    const supabase = useSupabaseClient()
-    if (supabase) {
-      const { error } = await supabase.from('contacts').insert({
+    await $fetch('/api/contact', {
+      method: 'POST',
+      body: {
         name: form.value.name,
         email: form.value.email,
         message: form.value.message
-      })
-      if (error) throw error
-    }
+      }
+    })
 
     status.value = {
       success: true,
@@ -140,18 +139,12 @@ const submitForm = async () => {
     }, 2500)
     
   } catch (err) {
-    console.warn('Supabase fallback:', err.message)
+    console.warn('Contact submission error:', err?.message || err)
     
     status.value = {
-      success: true,
-      message: t('contactPopup.mockSuccess')
+      success: false,
+      message: err?.statusMessage || t('contactPopup.error') || 'Failed to send message.'
     }
-    
-    form.value = { name: '', email: '', message: '' }
-    setTimeout(() => {
-      emit('close')
-      status.value = null
-    }, 2500)
   } finally {
     loading.value = false
   }

@@ -115,7 +115,7 @@ export default {
       s3Item3: 'Améliorer les performances de notre site web, l\'expérience utilisateur et nos offres de services.',
       s3Item4: 'Respecter les obligations légales, fiscales et comptables en vigueur au Gabon et à l\'international.',
       s4Title: '4. Stockage et Sécurité',
-      s4Text: 'Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles pour protéger vos données contre tout accès non autorisé, altération, divulgation ou destruction. Les soumissions de formulaires sont traitées via des connexions sécurisées et cryptées (notamment via l\'infrastructure de base de données Supabase).',
+      s4Text: 'Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles pour protéger vos données contre tout accès non autorisé, altération, divulgation ou destruction. Les soumissions de formulaires sont traitées via une infrastructure cloud sécurisée de traitement d\'emails.',
       s5Title: '5. Cookies et Technologies de Suivi',
       s5Text: 'Notre site web utilise des cookies essentiels et le stockage local du navigateur pour maintenir l\'état de la session et optimiser la navigation. Nous n\'utilisons pas de suivi publicitaire tiers intrusif et ne vendons pas vos données.',
       s6Title: '6. Partage avec des Tiers',

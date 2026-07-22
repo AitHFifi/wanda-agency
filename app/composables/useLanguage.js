@@ -4,6 +4,10 @@ import fr from '../locales/fr'
 
 const dictionaries = { en, fr }
 
+/**
+ * Composable for managing application internationalization and locale state.
+ * Supports English ('en') and French ('fr') with fallback logic.
+ */
 export const useLanguage = () => {
   const currentLocale = useState('currentLocale', () => 'en')
 

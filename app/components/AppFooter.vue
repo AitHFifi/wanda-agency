@@ -81,8 +81,21 @@
       </div>
 
       <!-- Bottom Credits bar -->
-      <div class="flex flex-col sm:flex-row justify-between items-center text-xs text-muted border-t border-primary/5 pt-6 md:pt-8 gap-4 text-center sm:text-left">
+      <div class="flex flex-col md:flex-row justify-between items-center text-xs text-muted border-t border-primary/5 pt-6 md:pt-8 gap-4 text-center md:text-left">
         <span>© {{ new Date().getFullYear() }} {{ t('footer.copyright') }}</span>
+
+        <p class="text-xs text-muted">
+          {{ t('footer.credits') }}
+          <a 
+            href="https://www.allogho.me/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="font-semibold text-primary hover:opacity-75 transition-opacity underline underline-offset-4 decoration-primary/30 hover:decoration-primary inline-flex items-center gap-1"
+          >
+            ALLOGHO Frederic
+          </a>
+        </p>
+
         <div class="flex gap-6">
           <NuxtLink to="/privacy" class="hover:underline">{{ t('footer.privacy') }}</NuxtLink>
           <NuxtLink to="/terms" class="hover:underline">{{ t('footer.terms') }}</NuxtLink>

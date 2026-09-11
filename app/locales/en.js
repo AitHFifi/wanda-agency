@@ -46,6 +46,7 @@ export default {
     locationLabel: 'Location',
     locationValue: 'Libreville, Gabon',
     copyright: 'Wanda Agency. All rights reserved.',
+    credits: 'Designed and developed by',
     privacy: 'Privacy Policy',
     terms: 'Terms of Service'
   },

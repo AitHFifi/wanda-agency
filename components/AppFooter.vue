@@ -60,11 +60,22 @@
       </div>
 
       <!-- Bottom Credits bar -->
-      <div class="flex flex-col sm:flex-row justify-between items-center text-xs text-muted border-t border-primary/5 pt-8 gap-4">
+      <div class="flex flex-col md:flex-row justify-between items-center text-xs text-muted border-t border-primary/5 pt-8 gap-4">
         <span>© {{ new Date().getFullYear() }} Wanda Agency. All rights reserved.</span>
+        <p class="text-xs text-muted">
+          Conçu et développé par
+          <a 
+            href="https://www.allogho.me/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="font-semibold text-primary hover:opacity-75 transition-opacity underline underline-offset-4 decoration-primary/30 hover:decoration-primary"
+          >
+            ALLOGHO Frederic
+          </a>
+        </p>
         <div class="flex gap-6">
-          <NuxtLink to="/" class="hover:underline">Privacy Policy</NuxtLink>
-          <NuxtLink to="/" class="hover:underline">Terms of Service</NuxtLink>
+          <NuxtLink to="/privacy" class="hover:underline">Privacy Policy</NuxtLink>
+          <NuxtLink to="/terms" class="hover:underline">Terms of Service</NuxtLink>
         </div>
       </div>
 
